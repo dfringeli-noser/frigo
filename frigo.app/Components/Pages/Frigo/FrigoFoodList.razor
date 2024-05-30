@@ -1,0 +1,33 @@
+﻿<h3>Foods</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Expires At</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Food food in FrigoFoods)
+        {
+            <tr>
+                <th>@food.Name</th>
+                <td>@food.WeightAsGram g</td>
+                <td>@food.ExpiresAt</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Inject]
+    private FrigoClient FrigoClient { get; set; } = default!;
+
+    private Food[] FrigoFoods = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        FrigoFoods = await FrigoClient.GetFrigoFoods();
+    }
+}

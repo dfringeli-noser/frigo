@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frigo.app", "frigo.app\frig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frigo.domain", "frigo.domain\frigo.domain.csproj", "{9E261629-D068-442F-9F6D-A73CFF20834A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frigo.domain.test", "frigo.domain.test\frigo.domain.test.csproj", "{87609D7A-75D8-4F13-A5B5-14FDA1A5C7CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9E261629-D068-442F-9F6D-A73CFF20834A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E261629-D068-442F-9F6D-A73CFF20834A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E261629-D068-442F-9F6D-A73CFF20834A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87609D7A-75D8-4F13-A5B5-14FDA1A5C7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87609D7A-75D8-4F13-A5B5-14FDA1A5C7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87609D7A-75D8-4F13-A5B5-14FDA1A5C7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87609D7A-75D8-4F13-A5B5-14FDA1A5C7CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

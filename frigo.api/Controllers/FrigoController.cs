@@ -12,13 +12,13 @@ namespace frigo.api.Controllers
         private readonly Frigo _frigo = frigo;
         private readonly IMapper _mapper = mapper;
 
-        [HttpGet("foods")]
+        [HttpGet("Foods")]
         public async Task<IReadOnlyList<Food>> GetFoods()
         {
             return await Task.FromResult(_frigo.Foods);
         }
 
-        [HttpPost("foods")]
+        [HttpPost("Foods")]
         public async Task<Food> AddFood(FoodCreateDto foodCreateDto)
         {
             Food food = _mapper.Map<Food>(foodCreateDto);

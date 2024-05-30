@@ -1,5 +1,4 @@
-﻿@inject FrigoService FrigoService
-
+﻿
 <h3>Foods</h3>
 
 <table class="table">
@@ -11,7 +10,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (FoodViewModel food in FrigoFoods)
+        @foreach (FoodViewModel food in Foods)
         {
             <tr>
                 <th>@food.Name</th>
@@ -23,10 +22,6 @@
 </table>
 
 @code {
-    private FoodViewModel[] FrigoFoods = [];
-
-    protected override async Task OnInitializedAsync()
-    {
-        FrigoFoods = await FrigoService.GetFrigoFoodsAsync();
-    }
+    [Parameter]
+    public FoodViewModel[] Foods { get; set; } = [];
 }

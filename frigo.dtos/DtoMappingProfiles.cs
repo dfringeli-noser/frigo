@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using frigo.domain;
 
-namespace frigo.api.Dtos
+namespace frigo.dtos
 {
     public class DtoMappingProfiles : Profile
     {

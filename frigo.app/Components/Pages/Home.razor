@@ -1,10 +1,31 @@
 ﻿@page "/"
 @using frigo.app.Components.Pages.Frigo
 
+@inject FrigoService FrigoService
+
 <PageTitle>Frigo</PageTitle>
 
 <h1>Frigo</h1>
 
-<FrigoFoodList />
+<FrigoFoodList Foods="FrigoFoods" />
 
-<FrigoAddFood />
+<FrigoAddFood FoodAdded="OnFoodAdded" />
+
+@code {
+    private FoodViewModel[] FrigoFoods = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetFrigoFoodsAsync();
+    }
+
+    private async Task OnFoodAdded()
+    {
+        await GetFrigoFoodsAsync();
+    }
+
+    private async Task GetFrigoFoodsAsync()
+    {
+        FrigoFoods = await FrigoService.GetFrigoFoodsAsync();
+    }
+}

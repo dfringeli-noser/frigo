@@ -1,4 +1,4 @@
-using frigo.api.Dtos;
+using frigo.dtos;
 using frigo.domain;
 
 var builder = WebApplication.CreateBuilder(args);

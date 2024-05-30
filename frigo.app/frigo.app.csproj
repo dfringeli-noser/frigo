@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\frigo.domain\frigo.domain.csproj" />
+    <ProjectReference Include="..\frigo.dtos\frigo.dtos.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,21 +2,38 @@
 
 <h3>Add new Food</h3>
 
-<input type="text" class="form-control" @bind="foodName" />
-
-<input type="number" class="form-control" @bind="foodWeightAsGram" />
-
-<input type="date" class="form-control" @bind="foodExpireAt" />
-
-<button type="submit" class="btn btn-primary mb-3" @onclick="AddFoodAsync">Add</button>
+<EditForm Model="FoodCreate" OnValidSubmit="Submit" FormName="FoodCreate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <label>
+        Name:
+        <InputText @bind-Value="FoodCreate.Name" />
+    </label>
+    <label>
+        Weight as gram:
+        <InputNumber @bind-Value="FoodCreate.WeightAsGram" />
+    </label>
+    <label>
+        Expires at:
+        <InputDate @bind-Value="FoodCreate.ExpiresAt" />
+    </label>
+    <button type="submit" class="btn btn-primary">Add</button>
+</EditForm>
 
 @code {
-    private string foodName = string.Empty;
-    private int foodWeightAsGram = 0;
-    private DateTimeOffset foodExpireAt = DateTimeOffset.Now;
+    [SupplyParameterFromForm(FormName = "FoodCreate")]
+    public FoodCreateViewModel FoodCreate { get; set; } = new FoodCreateViewModel();
 
-    private async Task AddFoodAsync()
+    [Parameter]
+    public EventCallback<FoodViewModel> FoodAdded { get; set; }
+
+    private async Task Submit()
     {
-        await FrigoService.AddNewFoodAsync(foodName, foodWeightAsGram, foodExpireAt);
+        var foodAdded = await FrigoService.AddNewFoodAsync(FoodCreate);
+        if (FoodAdded.HasDelegate)
+        {
+            await FoodAdded.InvokeAsync(foodAdded);
+        }
+        FoodCreate = new FoodCreateViewModel();
     }
 }

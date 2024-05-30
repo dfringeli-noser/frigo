@@ -7,15 +7,15 @@
     <ValidationSummary />
     <label>
         Name:
-        <InputText @bind-Value="FoodCreate.Name" />
+        <InputText class="form-control" @bind-Value="FoodCreate.Name" />
     </label>
     <label>
         Weight as gram:
-        <InputNumber @bind-Value="FoodCreate.WeightAsGram" />
+        <InputNumber class="form-control" @bind-Value="FoodCreate.WeightAsGram" />
     </label>
     <label>
         Expires at:
-        <InputDate @bind-Value="FoodCreate.ExpiresAt" />
+        <InputDate class="form-control" @bind-Value="FoodCreate.ExpiresAt" />
     </label>
     <button type="submit" class="btn btn-primary">Add</button>
 </EditForm>

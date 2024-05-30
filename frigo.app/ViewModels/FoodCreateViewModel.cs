@@ -9,7 +9,6 @@ namespace frigo.app.ViewModels
         public string Name { get; set; } = string.Empty;
 
         [Required]
-        [Range(10, double.MaxValue)]
         public int WeightAsGram { get; set; } = 0;
 
         [Required]

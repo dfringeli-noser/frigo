@@ -1,33 +1,32 @@
-﻿<h3>Foods</h3>
+﻿@inject FrigoService FrigoService
+
+<h3>Foods</h3>
 
 <table class="table">
     <thead>
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Weight</th>
-            <th scope="col">Expires At</th>
+            <th scope="col">Expires In</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (Food food in FrigoFoods)
+        @foreach (FoodViewModel food in FrigoFoods)
         {
             <tr>
                 <th>@food.Name</th>
-                <td>@food.WeightAsGram g</td>
-                <td>@food.ExpiresAt</td>
+                <td>@food.WeightAsGramText</td>
+                <td>@food.ExpireInDaysText</td>
             </tr>
         }
     </tbody>
 </table>
 
 @code {
-    [Inject]
-    private FrigoClient FrigoClient { get; set; } = default!;
-
-    private Food[] FrigoFoods = [];
+    private FoodViewModel[] FrigoFoods = [];
 
     protected override async Task OnInitializedAsync()
     {
-        FrigoFoods = await FrigoClient.GetFrigoFoods();
+        FrigoFoods = await FrigoService.GetFrigoFoodsAsync();
     }
 }

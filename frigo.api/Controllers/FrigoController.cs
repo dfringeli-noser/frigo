@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using frigo.api.dtos;
+using frigo.api.Dtos;
 using frigo.domain;
 using Microsoft.AspNetCore.Mvc;
 

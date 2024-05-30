@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using frigo.domain;
 
-namespace frigo.api.dtos
+namespace frigo.api.Dtos
 {
-    public class MappingProfiles : Profile
+    public class DtoMappingProfiles : Profile
     {
-        public MappingProfiles()
+        public DtoMappingProfiles()
         {
             CreateMap<FoodCreateDto, Food>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid()));

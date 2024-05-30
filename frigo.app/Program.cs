@@ -1,5 +1,6 @@
 using frigo.app.Components;
 using frigo.app.Services;
+using frigo.app.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,9 @@ builder.Services.AddHttpClient<FrigoClient>(client =>
 {
     client.BaseAddress = new Uri(builder.Configuration["ApiBaseUrl"] ?? string.Empty);
 });
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddAutoMapper(typeof(ViewModelMappingProfile));
+builder.Services.AddScoped<FrigoService>();
 
 var app = builder.Build();
 

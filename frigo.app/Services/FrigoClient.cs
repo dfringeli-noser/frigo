@@ -4,7 +4,7 @@ namespace frigo.app.Services
 {
     public class FrigoClient(HttpClient http)
     {
-        public async Task<Food[]> GetFrigoFoods()
+        public async Task<Food[]> GetFrigoFoodsAsync()
         {
             return await http.GetFromJsonAsync<Food[]>("Frigo/Foods") ?? [];
         }

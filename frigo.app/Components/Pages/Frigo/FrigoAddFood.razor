@@ -1,0 +1,22 @@
+﻿@inject FrigoService FrigoService
+
+<h3>Add new Food</h3>
+
+<input type="text" class="form-control" @bind="foodName" />
+
+<input type="number" class="form-control" @bind="foodWeightAsGram" />
+
+<input type="date" class="form-control" @bind="foodExpireAt" />
+
+<button type="submit" class="btn btn-primary mb-3" @onclick="AddFoodAsync">Add</button>
+
+@code {
+    private string foodName = string.Empty;
+    private int foodWeightAsGram = 0;
+    private DateTimeOffset foodExpireAt = DateTimeOffset.Now;
+
+    private async Task AddFoodAsync()
+    {
+        await FrigoService.AddNewFoodAsync(foodName, foodWeightAsGram, foodExpireAt);
+    }
+}

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frigo.domain.test", "frigo.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frigo.api", "frigo.api\frigo.api.csproj", "{6F2B2843-45EF-4887-A04C-696C5AFB9187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frigo.app", "frigo.app\frigo.app.csproj", "{F0B01487-7496-4904-BC3E-9CCC398B7D90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "frigo.app", "frigo.app\frigo.app.csproj", "{F0B01487-7496-4904-BC3E-9CCC398B7D90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
